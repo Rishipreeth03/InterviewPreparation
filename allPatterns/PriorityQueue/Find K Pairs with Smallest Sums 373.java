@@ -3,6 +3,10 @@ import java.util.*;
 class Solution {
 
     // Approach 1: Complete Brute Force Using Max-Heap (TLE)
+    /*
+        Time Complexity  : O(m * n * log(k)) - TLE
+        Space Complexity : O(k)
+    */
     public List<List<Integer>> kSmallestPairsApproach1(int[] nums1, int[] nums2, int k) {
         PriorityQueue<int[]> maxHeap = new PriorityQueue<>((a, b) -> b[0] - a[0]); // Max-Heap
 
@@ -32,6 +36,10 @@ class Solution {
     }
 
     // Approach 2: Improved Brute Force Using Max-Heap (Accepted)
+    /*
+        Time Complexity  : O(m * n * log(k)) - Slightly optimized but still expensive
+        Space Complexity : O(k)
+    */
     public List<List<Integer>> kSmallestPairsApproach2(int[] nums1, int[] nums2, int k) {
         PriorityQueue<int[]> maxHeap = new PriorityQueue<>((a, b) -> b[0] - a[0]); // Max-Heap
 
@@ -63,6 +71,10 @@ class Solution {
     }
 
     // Approach 3: Optimized Approach Using Min-Heap and Visited Set (O(k log k))
+    /*
+        Time Complexity  : O(k log k) - Best approach using MinHeap
+        Space Complexity : O(k)
+    */
     public List<List<Integer>> kSmallestPairsApproach3(int[] nums1, int[] nums2, int k) {
         PriorityQueue<int[]> minHeap = new PriorityQueue<>((a, b) -> a[0] - b[0]); // Min-Heap
         Set<String> visited = new HashSet<>();
